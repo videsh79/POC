@@ -1,0 +1,110 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-android'
+}
+
+android {
+    namespace 'com.example.weatherapp'
+    compileSdk 33
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    defaultConfig {
+        applicationId "com.example.weatherapp"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    flavorDimensions "default"
+
+    productFlavors{
+
+        free{
+            applicationId "com.example.weatherapp"
+        }
+
+        paid{
+            applicationId "com.example.weatherapp.paid"
+        }
+    }
+    buildTypes {
+
+        debug{
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+
+        beta{
+            applicationIdSuffix ".beta"
+            versionNameSuffix "-beta"
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.10.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    annotationProcessor 'androidx.databinding:databinding-compiler:8.0.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //lifecycle
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+    kapt "androidx.lifecycle:lifecycle-compiler:2.6.1"
+
+    //OKHttp
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
+
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    implementation "com.squareup.okhttp3:okhttp:5.0.0-alpha.11"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11"
+
+    // coroutines
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    // Retrofit 2 for network tasks
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    //Koin
+    implementation "io.insert-koin:koin-android:2.0.1"
+    implementation "io.insert-koin:koin-androidx-scope:2.0.1"
+    implementation "io.insert-koin:koin-androidx-viewmodel:2.0.1"
+
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation "androidx.preference:preference-ktx:1.2.0"
+    
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Weatherapp</string>
+    <string name="fetch_account_detail">Fetch account detail</string>
+    <string name="google">google</string>
+    <string name="enter_city">Enter City</string>
+    <string name="latitude">Latitude :</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

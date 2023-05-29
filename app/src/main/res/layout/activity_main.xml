@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:background="@drawable/weatherback"
+    tools:context=".ui.MainActivity"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <View
+        android:id="@+id/view"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginVertical="50dp" />
+    <ImageView
+        android:id="@+id/des"
+        android:layout_width="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_height="200dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@id/view"
+        app:srcCompat="@drawable/icon" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@id/des"
+        android:textSize="18dp"
+        android:visibility="visible"
+        android:layout_centerHorizontal="true"
+        android:text="Choose weather by"
+        android:textStyle="bold"
+        android:id="@+id/txtView"/>
+    <RadioGroup
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        android:id="@+id/rdGroup"
+        android:layout_below="@+id/txtView">
+        <RadioButton
+            android:id="@+id/rdbGps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:checked="true"
+            android:layout_marginLeft="100dp"
+            android:text="Current GPS Location"
+            />
+        <RadioButton
+            android:id="@+id/rdbCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="100dp"
+            android:text="City"
+            />
+        <RadioButton
+            android:id="@+id/rdbState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="100dp"
+            android:text="State and City"
+            />
+        <RadioButton
+            android:id="@+id/rdbCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="100dp"
+            android:text="Country State and City"
+            />
+    </RadioGroup>
+    <EditText
+        android:visibility="visible"
+        android:id="@+id/editInput"
+        android:layout_margin="20dp"
+        android:layout_below="@id/rdGroup"
+        android:hint="Enter Details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/getBtn"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_below="@+id/editInput"
+        android:text="Get Weather" />
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_below="@id/getBtn"-->
+<!--        android:padding="10dp"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <include android:id="@+id/nestWeather" layout="@layout/weather_layout"/>-->
+<!--    </LinearLayout>-->
+</RelativeLayout>
