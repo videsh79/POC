@@ -5,7 +5,6 @@ import org.koin.dsl.module
 
 val repositoryModule = module {
 
-    // Provide GithubRepository
     single {
         WeatherRepository(get())
     }
